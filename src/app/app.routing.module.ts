@@ -5,6 +5,10 @@ import { NoteListComponent } from 'src/app/note-list/note-list.component';
 import { RegisterComponent } from 'src/app/register/register.component';
 const routes: Routes = [
   {
+    path: "",
+    redirectTo : 'sign-up',
+  },
+  {
     path: "note-list/:token",
     pathMatch: "full",
     component: NoteListComponent,
