@@ -6,7 +6,8 @@ import { RegisterComponent } from 'src/app/register/register.component';
 const routes: Routes = [
   {
     path: "",
-    redirectTo : 'sign-up',
+    redirectTo: 'sign-up',
+    pathMatch: "full"
   },
   {
     path: "note-list/:token",
