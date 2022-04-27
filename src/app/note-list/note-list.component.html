@@ -1,0 +1,30 @@
+<div class="d-flex">
+  <p-card header="Note" [style]="{ width: '360px' }" styleClass="p-card-shadow" [id] ="note.id" *ngFor="let note of userNote; let idx=index">
+    <textarea
+      rows="5"
+      cols="30"
+      pInputTextarea
+      [autoResize]="true"
+      [(ngModel)]="note.value"
+    >{{note.value}}</textarea>
+    <ng-template pTemplate="footer">
+      <p-button label="Save" icon="pi pi-check" (click)="saveNote()"></p-button>
+      <p-button
+        label="Delete"
+        (click)="deleteNote(idx)"
+        icon="pi pi-times"
+        styleClass="p-button-secondary"
+        [style]="{ 'margin-left': '.5em' }"
+      ></p-button>
+    </ng-template>
+  </p-card>
+  <p-card
+    header="Add New Note"
+    [style]="{ width: '360px' }"
+    styleClass="p-card-shadow"
+  >
+    <ng-template pTemplate="body">
+      <p-button (click)="addNewNote()">Add new note</p-button>
+    </ng-template>
+  </p-card>
+</div>
