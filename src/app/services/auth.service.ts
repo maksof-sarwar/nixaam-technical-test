@@ -6,7 +6,7 @@ import { Base64 } from 'base64-string';
 export class AuthService {
   constructor() {}
   createToken(data) {
-    return new Base64().encode(data)
+    return new Base64().encode(JSON.stringify(data))
   }
   verifyToken(token) {
     return new Base64().decode(token);
